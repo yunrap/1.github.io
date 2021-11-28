@@ -6,7 +6,4 @@ made for banilajavascript
 + 현재시간표시
 + 현재날짜, 온도, 지역위치
 
-<<<<<<< HEAD
-=======
-
->>>>>>> e86a6294fa2c80e990847672d2a8a77b1f36fb39
+![todolist](img\todolist.png)
