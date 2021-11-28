@@ -1,10 +1,6 @@
-const images = ["0.jfif", "1.jpg", "2.jpg"];
+const images = ["1.jpg", "2.jpeg", "3.jpeg"];
 
 const chosenImage = images[Math.floor(Math.random() * images.length)];
 
-const bgImage = document.createElement("img");
-
-
-bgImage.src = `img/${chosenImage}`;
-
-document.body.appendChild(bgImage);
+const bodySelect = document.querySelector("body");
+bodySelect.style = `background-image: url("img/${chosenImage}")`;
