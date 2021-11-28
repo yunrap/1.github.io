@@ -4,7 +4,7 @@ const toDoList = document.getElementById("todo-list");
 
 const TODOS_KEY = "todos"
 
-const toDos = [];
+let toDos = []; // 기존 todolist 저장 변수 
 
 function saveToDos(){
     localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
@@ -12,19 +12,22 @@ function saveToDos(){
 
 function paintToDo(newTodo){
    const li = document.createElement("li");
+   li.id = newTodo.id;
    const span = document.createElement("span");
    const button = document.createElement("button");
    button.innerText = "❌";
    button.addEventListener("click", deleteToDo);
    li.appendChild(span);
    li.appendChild(button);
-   span.innerText = newTodo;
+   span.innerText = newTodo.text;
    toDoList.appendChild(li);
 }
 
 function deleteToDo(event){
-    const delElement = event.target.parentNode;
+    const delElement = event.target.parentElement;
     delElement.remove();
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(delElement.id));
+    saveToDos();
 }
 
 function handelToDoSubmit(e) {
@@ -35,25 +38,19 @@ function handelToDoSubmit(e) {
         text:newTodo,
         id:Date.now(),  
     };
-    toDos.push(newTodo);
-    paintToDo(newTodo);
+    toDos.push(newTodoObj);
+    paintToDo(newTodoObj);
     saveToDos();
 }
 
 toDoForm.addEventListener("submit", handelToDoSubmit);
 
-
-function sayHello(item){
-    console.log("hello", item);
-}
-
-
 const saveToDosText = localStorage.getItem(TODOS_KEY);
-console.log(saveToDosText);
 
 if(saveToDosText !== null){
     const parsedToDos = JSON.parse(saveToDosText);
-    parsedToDos.forEach(item => { console.log("해야할일 list", item)
-        
-    });
+    toDos = parsedToDos;    //원래있던 toDolist 저장
+    parsedToDos.forEach(paintToDo);
 }
+
+//새로운 array를 만드는 filterfunction 기능

@@ -1,9 +1,17 @@
 const nowTimePart =document.querySelector("#clock")
 
-var today = new Date();
+setInterval(myTimer, 1000);
 
-let hours = today.getHours(); // 시
-let minutes = today.getMinutes();  // 분
-let seconds = today.getSeconds();  // 초
+function myTimer() {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    
+    nowTimePart.innerHTML = `${hours}:${minutes}`;
 
-nowTimePart.innerText = `${hours}:${minutes}:${seconds}`;
+}
+
+
+
+
+

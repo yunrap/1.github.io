@@ -12,21 +12,17 @@ function onLoginSubmit(event) {
   localStorage.setItem(USERNAME_KEY, username);   //웹어플리케이션에 정보저장 브라우저용 d
 
   paintGreetings(username);
-  console.log(username);
 }
 
 function paintGreetings(username) {
   greeting.classList.remove(HIDDEN_CLASSNAME);
   loginInputForm.classList.add(HIDDEN_CLASSNAME);
-  greeting.innerText = `Hello ${username}`; //백틱기호를 사용한다 ``
+  greeting.innerText = `안녕하세요 ${username}님!!`; //백틱기호를 사용한다 ``
 }
 
 loginInputForm.addEventListener("submit", onLoginSubmit);
 
 const savedUserName = localStorage.getItem(USERNAME_KEY);
-
-console.log(savedUserName);
-
 
 if(savedUserName === null){
   loginInputForm.classList.remove(HIDDEN_CLASSNAME);
