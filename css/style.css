@@ -2,3 +2,67 @@
 {
     display: none;
 }
+
+body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: auto;
+}
+
+#clock {
+    text-align: center;
+    padding-top: 40px;
+}
+
+h1 {
+    color: #ffffffcc;
+    font-size: 124px;
+}
+
+h2 {
+    color: #ffffffcc;
+    text-align: center;
+}
+
+input {
+ padding: 10px 20px; margin: 5px 0; box-sizing: border-box;
+ text-align: center;
+}
+
+input[type=text]:focus {
+    border: 3px solid #555;
+}
+
+#login-form, #todo-form{
+    text-align: center;
+}
+
+#quote {
+    font-family: "Lucida Console", "Courier New", monospace;
+    color: aliceblue;
+    font-weight: bold;
+    text-align: center;
+}
+
+#todo-list {
+    text-align: center;
+}
+
+#todo-list  li span{
+    font-size: 40px;
+    color: black;
+}
+
+ul{
+    list-style:none;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.623);
+    text-align: center;
+}
+
+#weather{
+    color: rgb(255 255 255);
+    background-color: rgb(13 0 0 / 62%);
+    width: 235px;
+}
