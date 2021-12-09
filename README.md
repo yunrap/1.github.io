@@ -7,3 +7,5 @@ made for banilajavascript
 + 현재날짜, 온도, 지역위치
 
 ![todolist](./img/todolist.png)
+
+![recievereward](./img/recievereward.png)
